@@ -40,9 +40,23 @@ export class Login extends React.Component<LoginProps, LoginState> {
         return ~~(Math.random() * max) + min
     }
 
+    public onUsernameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            user: e.target.value
+        });
+    }
+
+    public onPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+            pass: e.target.value
+        });
+    }
+
     public render = () => {
         const {
-            requestActive
+            requestActive,
+            pass,
+            user
         } = this.state;
 
         return <>
@@ -55,18 +69,25 @@ export class Login extends React.Component<LoginProps, LoginState> {
                     inline={true}
                 >
                     <InputGroup 
-                    id="username" 
-                    placeholder="Usuario"
-                    leftIcon={IconNames.USER} />
+                        id="username" 
+                        placeholder="Usuario"
+                        leftIcon={IconNames.USER}
+                        value={user}
+                        onChange={this.onUsernameChange}
+                    />
                 </FormGroup>
                 <FormGroup
                     labelFor="password"
                     inline={true}
                 >
                     <InputGroup 
-                    id="password" 
-                    placeholder="Contraseña"
-                    leftIcon={IconNames.LOCK} />
+                        id="password" 
+                        placeholder="Contraseña"
+                        leftIcon={IconNames.LOCK}
+                        type={"password"}
+                        value={pass}
+                        onChange={this.onPasswordChange}
+                    />
                 </FormGroup>
                 <FormGroup>
                     <Button
