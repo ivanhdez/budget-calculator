@@ -47,7 +47,7 @@ export class Login extends React.Component<LoginProps, LoginState> {
 
         return <>
             <div className={"app-login"}>
-                <div>
+                <div className={"app-logo-wrapper"}>
                     <img className={"app-logo"} src={"logo-placeholder.jpeg"}/>
                 </div>
                 <FormGroup
