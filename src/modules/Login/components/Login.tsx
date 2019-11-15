@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputGroup, FormGroup, Button } from '@blueprintjs/core';
+import { InputGroup, FormGroup, Button, Label } from '@blueprintjs/core';
 import { IconNames } from '@blueprintjs/icons';
 import './Login.scss';
 
@@ -93,11 +93,11 @@ export class Login extends React.Component<LoginProps, LoginState> {
                     <Button
                         text={"Entrar"}
                         onClick={this.onClickLogin}
-                        className={"app-btn-login"}
                         icon={IconNames.LOG_IN}
                         loading={requestActive}
                     />
                 </FormGroup>
+                <a>¿Olvidaste tu contraseña?</a>
             </div>
         </>;
     }
